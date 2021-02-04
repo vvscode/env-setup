@@ -4,5 +4,6 @@ describe("x", () => {
   it("returns param multiplied 2", () => {
     expect(x(2)).toBe(4);
     expect(x(3)).toBe(6);
+    expect(x(11)).toBe(11);
   });
 });
