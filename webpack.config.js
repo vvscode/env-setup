@@ -1,5 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const glob = require("glob");
+
+const pages = glob.sync("pages/*.html");
 
 module.exports = {
   entry: "./src/index.js",
@@ -8,8 +11,12 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "index.html",
-    }),
+    ...pages.map(
+      (el) =>
+        new HtmlWebpackPlugin({
+          filename: el.replace(/^pages\//, ""),
+          template: el,
+        })
+    ),
   ],
 };
