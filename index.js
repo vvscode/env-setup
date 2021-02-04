@@ -1,0 +1,1 @@
+(()=>{"use strict";function o(o){return 2*o}console.log(o(1));const e=Number(prompt("Enter number",3));alert(o(e)),console.log(o(2))})();
