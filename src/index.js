@@ -1,7 +1,9 @@
 import { x } from "./x";
 
-console.log(x(1));
-const valueFromUser = Number(prompt("Enter number", 3));
-alert(x(valueFromUser));
+document.querySelector("h1").addEventListener("click", () => {
+  console.log(x(1));
+  const valueFromUser = Number(prompt("Enter number", 3));
+  alert(x(valueFromUser));
 
-console.log(x(2));
+  console.log(x(2));
+});
